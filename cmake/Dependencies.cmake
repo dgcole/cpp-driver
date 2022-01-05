@@ -21,7 +21,7 @@ if(NOT LIBUV_ROOT_DIR)
 endif()
 
 # Ensure libuv was found
-find_package(Libuv "1.0.0")
+find_package(Libuv "1.42.0")
 if(WIN32 AND NOT LIBUV_FOUND)
   message(STATUS "Unable to Locate libuv: Third party build step will be performed")
   include(ExternalProject-libuv)
