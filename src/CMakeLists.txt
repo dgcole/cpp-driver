@@ -181,6 +181,7 @@ if(CASS_BUILD_STATIC)
     $<TARGET_OBJECTS:http-parser_static>
     $<TARGET_OBJECTS:minizip_static>)
   target_link_libraries(cassandra_static ${CASS_LIBS})
+  target_link_libraries(cassandra_static libuv)
   target_include_directories(cassandra_static PRIVATE ${INCLUDE_DIRS} ${CASS_INCLUDES})
 
   set_target_properties(cassandra_static PROPERTIES OUTPUT_NAME scylla-cpp-driver_static)
