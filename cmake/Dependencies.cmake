@@ -22,10 +22,9 @@ endif()
 
 # Ensure libuv was found
 find_package(Libuv "1.42.0")
-if(WIN32 AND NOT LIBUV_FOUND)
+if(NOT LIBUV_FOUND)
   message(STATUS "Unable to Locate libuv: Third party build step will be performed")
   include(ExternalProject-libuv)
-elseif(NOT LIBUV_FOUND)
   message(FATAL_ERROR "Unable to Locate libuv: libuv v1.0.0+ is required")
 endif()
 
